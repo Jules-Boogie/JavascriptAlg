@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Largest sum</title>
+</head>
+<body>
+
+
+  <script>
+    var array = [1, 2, 4, 5, 9, 7, 16, 12, 20]
+
+    function largestSum(arr) {
+    // ====================== YOUR WORK HERE ===================
+
+    //take 2 numbers and add them
+    // send the added numbers into a new array
+    // by the end you should have an array of the sums
+    // then find the max of the array of sums 
+    var largestSum = arr[0];
+   
+    
+    
+    for(var i = 0; i<arr.length; i++){
+     
+      for(var j = 0; j<arr.length; j++){
+       
+        if(i!==j){
+          var sum = arr[i] + arr[j]
+          if(sum > largestSum){
+            largestSum = sum
+          }
+        }
+        
+      }
+    
+    }
+
+
+
+    return largestSum;
+
+    // =========================================================
+  }
+
+
+console.log(largestSum(array))
+  </script>
+  
+</body>
+</html>
