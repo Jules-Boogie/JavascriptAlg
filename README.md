@@ -1,5 +1,5 @@
 # JavascriptAlg
-
+This is the code repo for the Javascript Algorithms I am solving and Learning.
 
 ```
  var array = [9, 11, 8, 5, 7, 10]
