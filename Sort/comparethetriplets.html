@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Quick Sort</title>
+</head>
+
+<script>
+
+//https://www.hackerrank.com/challenges/compare-the-triplets/problem?h_r=next-challenge&h_v=zen
+
+    var a = [5,6,7]
+    var b =[3,6,10]
+
+    var c = [17, 28, 30]
+    var d = [99, 16, 8]
+function compareTriplets(a, b) {
+    var arr = []
+for(var i=0;i<a.length;i++){
+    var acount = 0;
+    var bcount = 0
+    for(var i=0; i<b.length; i++){
+        
+        if(a[i] > b[i]){
+           acount++
+          console.log(acount)
+        } else if(b[i] > a[i]){
+            bcount++
+            console.log(bcount)
+            // 
+        } 
+        
+    }
+  
+}
+console.log(bcount)
+arr.push(acount,bcount)
+// arr.push(bcount)
+return arr;
+}
+
+console.log(compareTriplets(a,b))
+console.log(compareTriplets(c,d))
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

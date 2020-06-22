@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF">
+    <title> quickSort </title>
+</head>
+
+
+<script>
+
+    let arraytest = [5, 7, 4, 3, 8, 9, -1]
+
+    function quickSort(arr) {
+
+        //copy the array .. we never want to mutate the original array
+
+        //check here if the arr is less than or equal to one, there is no need to go forward 
+        // since quick sort's goal is to finally have the arrays of one element
+        const newArr = [...arr]
+        if (newArr.length <= 1) {
+            return newArr
+        }
+
+        // the pivot element is the first element of the array and therefore, shift will be used to retrieve that element.
+        // thereby changing the newArr (this is why you make a copy)
+        // then the pivot element is then moved added to the array for pivot elements. 
+        const pivotEL = newArr.shift()
+        const pivotArr = [pivotEL]
+
+        // initiate the other arrays
+        const smallerthanPivot = []
+        const largerthanPivot = []
+
+        //logic
+        //as long as the copied array length is not zero:
+        // grab the first element, check if it is equal, less than, greater than the our pivotEL and push into
+        // approval arrays above. 
+
+        while (newArr.length) {
+            const newPivot = newArr.shift()
+            if (newPivot === pivotEL) {
+                pivotArr.push(newPivot)
+            } else if (newPivot > pivotEL) {
+                largerthanPivot.push(newPivot)
+            } else if(newPivot < pivotEL) {
+                smallerthanPivot.push(newPivot)
+            }
+        }
+
+        // needs to be repeated for all new arrays
+        // recursion time
+
+        const recursiveSmallArray = quickSort(smallerthanPivot)
+        const recursiveBiggerArray = quickSort(largerthanPivot)
+        const finalArray = recursiveSmallArray.concat(pivotArr,recursiveBiggerArray)
+        return finalArray
+    }
+
+    console.log(quickSort(arraytest))
+
+    //  masterTheorem to calculate recursive runtime
+    // O(n **logba) = if recursion does more work than the other portion
+    // O(n**logba log n) = if same amount of work was done by recursive or none recursive 
+    // O(fn(n)) - if the non recursive portion does more work 
+    // b is subproblem size, input size
+    // a is number of subproblems, number of recursions
+
+    // Big O for recursive step
+    // the size of the array is reduced every recursion.
+    // we have 2 sub problems 
+    // O(n**(log base (2) 2)) = O(n^1)
+
+    // Big O for none recursive
+    // while loop and we go through all elements of the array 
+    // one loop == linear time O(n)
+
+    //total complexity 
+    // using O(n**logba log n) = if same amount of work was done by recursive or none recursive  
+    // O(n log n)
+
+
+
+    // best case (sorted randomly) O(n * logn)
+    // worst case (already sorted) O(n^2)
+
+
+
+
+
+</script>
+
+</html>

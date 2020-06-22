@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head> 
+    <meta charset="UTF-8">
+    <title> Bubble Sort </title>
+</head>
+
+<script>
+
+var array = [5,4,6,7,8,-1,2]
+var bestCase = [1,2,3,4]
+var worstCase = [4,3,2,1]
+function bubbleSort(arr){
+    
+    var sortedArr = [...arr]
+    for(var outer = 0; outer<sortedArr.length; outer++){
+        var outerEl = sortedArr[outer]
+        console.log(outerEl)
+        for(var inner = outer+1; inner<sortedArr.length; inner++){
+            var innerEl = sortedArr[inner]
+            console.log(innerEl)
+            if(outerEl > innerEl){
+                console.log("testing if")
+                sortedArr[outer] = innerEl;
+                sortedArr[inner] = outerEl
+
+                outerEl = sortedArr[outer]
+                innerEl = sortedArr[inner]
+            }
+        }
+        
+    }
+    return sortedArr
+
+// Time Complexity
+// best Case: array that already been sorted. 
+// O(n) as the time increases linearly with as n grows. 
+//worst case: opposite sort order 
+// O(n^2) as we have 2 nested loops that will be executed for every element in the array. 
+// average case with random order is about O(n^2)
+}
+
+
+// console.log(bubbleSort(array))
+// console.log(bubbleSort(bestCase))
+console.log(bubbleSort(worstCase))
+
+</script>
+
+</html>
