@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title> 2sums </title>
+</head>
+<script>
+
+// brute force
+
+var twoSum = function(nums, target) {
+    for(var i =0; i<nums.length; i++){
+        for(var j=0; j<nums.length; j++){
+            if(i!=j) {
+              var sum = nums[i] + nums[j]
+            if(sum === target){
+                return [i, j]
+            }
+             }
+            
+    }
+    }
+};
+
+
+
+// O(n)
+
+function twoSums(arr, target){
+const map = {}
+
+for(var i =0; i<arr.length; i++){
+    const secondNum = target - arr[i]
+    if(secondNum in map){
+        return [map[secondNum], i]
+     }
+     map[arr[i]] = i;
+    
+}
+return null
+}
+
+// 2 sum sorted array
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
+
+
+

@@ -7,6 +7,55 @@
 <title> merge sort</title>
 </head>
 
+<script>
+   
+  function mergeSort(arr)  {
+    // split array into the middle
+    // split it again until you have 2 elements
+    // sort the items in the 2 element array
+    // merge the element arrays together
+
+    if(arr.length < 2){
+      return arr;
+    }
+
+    if(arr.length === 2){
+      return arr[0] > arr[1] ? [arr[1], arr[0]] : arr;
+    }
+
+    var middle = Math.floor(arr.length/2)
+    var leftArr = arr.slice(0, middle)
+    var rightArr = arr.slice(middle)
+    
+
+    const leftSort = mergeSort(leftArr)
+    const rightSort = mergeSort(leftArr)
+    
+    const leftSortIndex = 0
+    const rightSortIndex = 0
+    const mergedArr = []
+
+
+    while(leftSortIndex < leftSort.length || rightSortIndex < rightSort.length){
+      if(leftSortIndex >= leftSort.length || leftSort[leftSortIndex] > rightSort[rightSortIndex]){
+        mergedArr.push(rightSort[rightSortIndex])
+        rightSortIndex++
+      } else{
+        mergedArr.push(leftSort[leftSortIndex])
+        leftSortIndex++
+      }
+    }
+
+
+  }
+    
+
+
+
+
+
+
+</script>
 
 
 

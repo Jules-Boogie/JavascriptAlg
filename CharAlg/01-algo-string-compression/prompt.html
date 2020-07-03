@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Compressor</title>
+</head>
+<body>
+
+
+  <script>
+
+var S = [12, 1, 61, 5, 9, 2]
+var targetNum = 24
+// Given a list of integers S and a target number k, write a function that returns a subset of S that adds up to k. 
+// If such a subset cannot be made, then return null.
+// Integers can appear more than once in the list. You may assume all numbers in the list are positive.
+// For example, given S = [12, 1, 61, 5, 9, 2] and k = 24, return [12, 9, 2, 1] since it sums up to 24.
+
+// var targetNum;
+
+
+function subsetAdd(arr,num){
+  var sum = 0
+  var remainder = 0;
+  var newArr = []
+  
+  arr.sort((a,b) => b-a)
+
+
+  for(var i=0; i<arr.length; i++){
+   
+    if(arr[i]> num){
+      arr.splice(i,1)
+    }
+    if(sum + arr[i] <= num)
+        sum += arr[i]
+      if(sum + prev === sum + current)
+        console.log(sum, arr[i], arr[i+1])
+        newArr.push(arr[i])
+      
+     
+    }
+   
+    return newArr
+   
+  
+  }  
+  
+   
+    
+  
+
+    // for(var i=0; i<newArr.length; i++){
+    //    sum += newArr[i]
+    //  }
+      
+    
+     
+  
+  
+  
+
+
+
+
+
+    // =========================================================
+    
+    console.log(subsetAdd(S, targetNum))
+  </script>
+  
+</body>
+</html>
